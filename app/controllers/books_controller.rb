@@ -9,7 +9,13 @@ class BooksController < ApplicationController
     @book = Book.new
   end
   def create
-    Book.create(params.require(:book).permit(:title, :author, :description,:page_count, :published_at))
-    redirect_to books_path
+   # Avant la validation Book.create(params.require(:book).permit(:title, :author, :description,:page_count, :published_at))
+   @book = Book.new(params.require(:book).permit(:title, :author, :description,:page_count, :published_at))
+   if @book.save   # Si le livre est sauvegardé
+     redirect_to books_path  # redirection sur la liste des livres
+   else 
+     render :new  # On retourne le resultat de l'action new
+   end
   end
+  
 end
