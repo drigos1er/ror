@@ -27,8 +27,8 @@
 #       "yes": yup
 #       enabled: "ON"
 
-en:
+fr:
   home:
     index:
-     welcome:  Not mutch for now, but hey ! hello world !
-  hello: "Hello world"
+     welcome:  Pas grand chose mais on y travaille !
+
