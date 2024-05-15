@@ -14,5 +14,6 @@ Rails.application.routes.draw do
    #post 'books/create', to: 'books#create'  (route create)
    #get 'books/:id/edit', to: 'books#edit'  (route edit)
    #patch 'books/:id', to: 'books#update'  (route update)
-   resources :books, only: [:show, :index, :new, :edit, :create, :update]
+   #delete 'books/:id', to: 'books#delete'  (route delete)
+   resources :books, only: [:show, :index, :new, :edit, :create, :update, :destroy]
 end
