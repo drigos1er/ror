@@ -4,12 +4,14 @@
         <th>Title</th>
          <th>Author</th>
           <th></th>
+            <th></th>
     </tr>
-    <% @books.each do |book|%>
+    <% @books.order(:title).each do |book|%>
      <tr>
         <th>    <%= book.title %></th>
          <th>    <%= book.author %></th>
-          <th> <%= link_to "show", book_path(book) %></th>
+          <th> <%= link_to "Show", book_path(book) %></th>
+          <th> <%= link_to "Edit", edit_book_path(book) %></th>
     </tr>
      <% end %>
 </table>

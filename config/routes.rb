@@ -12,5 +12,7 @@ Rails.application.routes.draw do
    #get 'books', to: 'books#index'  (Ajout de la route index)
    #get 'books/new', to: 'books#new'  (route new)
    #post 'books/create', to: 'books#create'  (route create)
-   resources :books, only: [:show, :index, :new, :create]
+   #get 'books/:id/edit', to: 'books#edit'  (route edit)
+   #patch 'books/:id', to: 'books#update'  (route update)
+   resources :books, only: [:show, :index, :new, :edit, :create, :update]
 end
