@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :find_book, only: [:show, :edit, :update] #filter before qui declare une methode en debut des actions cités
+  before_action :find_book, only: [:show, :edit, :update, :destroy] #filter before qui declare une methode en debut des actions cités
   def show
   end
   def index
@@ -32,6 +32,15 @@ class BooksController < ApplicationController
      render :edit  # On retourne le resultat de l'action new
    end
   end
+
+
+  def destroy
+    @book.destroy
+    redirect_to books_path 
+  end
+
+
+
   private
     def book_params
       params.require(:book).permit(:title, :author, :description,:page_count, :published_at)
